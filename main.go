@@ -9,7 +9,6 @@ import (
 	"user-reader-service/models"
 
 	"github.com/gin-gonic/gin"
-	"github.com/joho/godotenv"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
@@ -18,11 +17,11 @@ var DB *gorm.DB
 
 func initDB() {
 	var err error
-	err = godotenv.Load()
-	if err != nil {
-		// Log.Fatal akan mencetak pesan dan menghentikan program jika file .env tidak ditemukan
-		log.Fatalf("Error loading .env file: %v", err)
-	}
+	// err = godotenv.Load()
+	// if err != nil {
+	// 	// Log.Fatal akan mencetak pesan dan menghentikan program jika file .env tidak ditemukan
+	// 	log.Fatalf("Error loading .env file: %v", err)
+	// }
 	// Logika initDB sama seperti service creator
 	host := os.Getenv("POSTGRES_HOST")
 	user := os.Getenv("POSTGRES_USER")
